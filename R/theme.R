@@ -11,8 +11,8 @@
 #'
 #' library(ggplot2)
 #'
-#' ggplot(mtcars, aes(x = mpg)) + geom_dotplot() + theme_THF()
-theme_THF <- function (base_size = 11,
+#' ggplot(mtcars, aes(x = mpg)) + geom_dotplot() + THF_styles()
+THF_styles <- function (base_size = 11,
                        base_family = "LTUnivers")
 {
   half_line <- base_size / 2
