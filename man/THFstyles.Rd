@@ -4,7 +4,7 @@
 \alias{THF_styles}
 \title{Title}
 \usage{
-theme_THF(base_size = 11, base_family = "LTUnivers")
+THF_styles(base_size = 11, base_family = "LTUnivers")
 }
 \arguments{
 \item{base_family}{}
