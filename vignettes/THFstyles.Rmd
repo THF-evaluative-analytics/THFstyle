@@ -1,0 +1,23 @@
+---
+title: "THFstyles"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{THFstyles}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(THFstyles)
+```
+
+```{r, include = TRUE}
+THF_styles(base_size = 11, base_family = "LTUnivers")
+```
