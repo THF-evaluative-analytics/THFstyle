@@ -3,7 +3,7 @@ Functions to make plots look Health Foundation branded.
 
 ## Installing bbplot
 
-`THFstyle` is not on CRAN, so you will have to install it directly from Github using `devtools`. 
+`THFstyles` is not on CRAN, so you will have to install it directly from Github using `devtools`. 
 
 If you do not have the `devtools` package installed, you will have to run the first line in the code below as well. 
 
