@@ -8,7 +8,7 @@ Authors@R:
            email = "paris.pariza@nhs.net",
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: This package contains all elements that would make visualisation plots look like Health Foundation branded.It contains settings for the size, font, colour and position of any text, including legents, axis and other labels.   
-License: MIT License
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
