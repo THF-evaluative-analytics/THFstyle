@@ -10,7 +10,7 @@ THF_3_teal <- '#2a7979'
 THF_4_coral <- '#ee9b90'
 THF_5_darkgreen <- '#0c402b'
 THF_6_turquoise <- '#a6d7d3'
-THF_7_tblue <- '#005078'
+THF_7_blue <- '#005078'
 THF_8_orange <- '#f39214'
 THF_9_green <- '#2ca365'
 
@@ -18,9 +18,11 @@ THF_9_green <- '#2ca365'
 # to show changes of scale within data category
 THF_75pct_rose <- '#ee7375'
 THF_50pct_rose <- '#f2a0a2'
-THF_light_blue <- '#53a9cd'
+
 THF_75pct_light_blue <- '#7fbfda'
 
+pal_THF_cont <- c(THF_red, THF_75pct_rose, THF_50pct_light_blue, THF_75pct_light_blue )
+pal(pal_THF_cont)
 # Additional elements
 THF_add_blue <- '#005078'
 THF_75pct_blue <- '#3C7797'
