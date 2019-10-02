@@ -1,0 +1,22 @@
+Package: THFstyles
+Title: This package aims to make plots look like Health Foundation branded
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Paris",
+           family = "Pariza",
+           role = c("aut", "cre"),
+           email = "paris.pariza@nhs.net",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: This package contains all elements that would make visualisation plots look like Health Foundation branded.It contains settings for the size, font, colour and position of any text, including legents, axis and other labels.   
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Imports: 
+    ggplot2,
+    ggthemes,
+    grDevices
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

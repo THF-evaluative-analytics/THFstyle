@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1569318318238.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "DC79BFFA",
+    "lastKnownWriteTime" : 1570010877,
+    "last_content_update" : 1570010877,
+    "path" : "/cloud/project/R/theme.R",
+    "project_path" : "R/theme.R",
+    "properties" : {
+        "cursorPosition" : "14,31",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
