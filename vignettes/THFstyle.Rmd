@@ -19,5 +19,5 @@ library(THFstyle)
 ```
 
 ```{r, include = TRUE}
-THF_style(base_size = 11, base_family = "LTUnivers")
+theme_THF(base_size = 11, base_family = "LTUnivers")
 ```

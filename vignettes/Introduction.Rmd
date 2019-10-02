@@ -1,0 +1,43 @@
+---
+title: "Introduction"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(THFstyle)
+library(broom)
+```
+
+```{r}
+ 
+model_em_end <- glm(em_end ~ intervention + male + age + imd15quint , data=cleaned_dat, family = poisson(link = "log"))
+
+coef_plot_dat <-
+
+```
+
+
+# Example 1: IAU standard coefplot
+
+```{r}
+ggplot2::ggplot(data = coef_plot_dat, aes(y=outcome,
+                                      x=estimate, xmin=ci_low, xmax=ci_high, color = measure)) +
+    ggplot2::geom_vline(xintercept = 1, linetype = "dashed", size = 0.6, colour = "grey75") +  # plot a dashed line at null value (i.e. 1)
+  ggplot2::geom_errorbarh(height = 0.2) + # confidence interval bars
+    ggplot2::geom_point(shape=21, fill="white", size = 3) # estimate points
+  # Add themes and IAU colours ----
+    ylab('') +
+    xlab("Relative risk, log-scaled") +
+    theme_THF()
+```
