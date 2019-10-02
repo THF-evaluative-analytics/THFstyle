@@ -2,17 +2,16 @@
 % Please edit documentation in R/colours.R
 \name{scale_fill_continuous_THF}
 \alias{scale_fill_continuous_THF}
-\title{Continuous colour scales THF}
+\title{Title}
 \usage{
 scale_fill_continuous_THF()
 }
 \description{
-Continuous colour scales THF
+Title
 }
 \examples{
+
 library(ggplot2)
-ggplot(mtcars, aes(x=mpg, y=wt, colour=factor(cyl))) +
-geom_point() +
-scale_colour_discrete_THF() +
-theme_THF()
+ ggplot(faithfuld, aes(waiting, eruptions)) + geom_raster(aes(fill = density)) +
+ scale_fill_continuous_THF() + theme_THF()
 }
