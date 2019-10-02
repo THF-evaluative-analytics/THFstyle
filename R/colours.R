@@ -61,17 +61,8 @@ scale_colour_discrete_THF <- function(){
     scale_colour_manual(values=pal_THF)
   ))
 }
-
-scale_colour_continuous_THF <- function(){
-
-  structure(list(
-    scale_colour_gradientn(colours = pal_THF_cont)
-  ))
-}
-
 #' Continuous colour scales THF
 #'
-#' @return
 #' @export
 #'
 #' @examples
@@ -80,6 +71,24 @@ scale_colour_continuous_THF <- function(){
 #' geom_point() +
 #' scale_colour_discrete_THF() +
 #' theme_THF()
+#'
+scale_colour_continuous_THF <- function(){
+
+  structure(list(
+    scale_colour_gradientn(colours = pal_THF_cont)
+  ))
+}
+
+
+#' Title
+#'
+#' @export
+#'
+#' @examples
+#'
+#'library(ggplot2)
+#'  ggplot(faithfuld, aes(waiting, eruptions)) + geom_raster(aes(fill = density)) +
+#'  scale_fill_continuous_THF() + theme_THF()
 scale_fill_continuous_THF <- function(){
 
   structure(list(
