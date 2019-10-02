@@ -12,3 +12,7 @@ If you do not have the `devtools` package installed, you will have to run the fi
 # install.packages('devtools')
 devtools::install_github('bbc/bbplot')
 ```
+
+
+## License
+This project is licensed under the [MIT License](LICENSE.md).
