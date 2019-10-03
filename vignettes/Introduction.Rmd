@@ -14,30 +14,56 @@ knitr::opts_chunk$set(
 )
 ```
 
+
+# Install packages required
+
 ```{r setup}
 library(THFstyle)
 library(broom)
+library(tidyverse)
+library(ggplot2)
+
 ```
+
+
+# Example 1: IAU standard coefplot # 
+# -------------------------------- #
+
+# Create a dataset with coefficient estimates
 
 ```{r}
  
-model_em_end <- glm(em_end ~ intervention + male + age + imd15quint , data=cleaned_dat, family = poisson(link = "log"))
+model_carb <- glm(carb ~ mpg  + cyl  + hp + vs , data=mtcars, family = poisson(link = "log"))
 
-coef_plot_dat <-
+model_carb_tidy <- broom::tidy(model_carb, conf.int = TRUE) %>%   
+  filter(term=="vs") %>%
+  mutate(outcome="carb") %>%
+  mutate(measure="count") %>%
+  as.data.frame()
+  
+model_am <- glm(am ~ vs , data=mtcars, family=binomial(link = "logit")) 
+  
+model_am_tidy <- broom::tidy(model_am, conf.int = TRUE) %>%
+  filter(term=="vs") %>%
+  mutate(outcome="am") %>%
+  mutate(measure="proportion") %>%
+  as.data.frame()
+
+coef_data <- rbind(model_carb_tidy, model_am_tidy) %>%
+  rename(ci_low=conf.low, ci_high=conf.high)
 
 ```
 
 
-# Example 1: IAU standard coefplot
+# Create a standard IAU coefficient plot using THFtheme
 
 ```{r}
-ggplot2::ggplot(data = coef_plot_dat, aes(y=outcome,
-                                      x=estimate, xmin=ci_low, xmax=ci_high, color = measure)) +
-    ggplot2::geom_vline(xintercept = 1, linetype = "dashed", size = 0.6, colour = "grey75") +  # plot a dashed line at null value (i.e. 1)
-  ggplot2::geom_errorbarh(height = 0.2) + # confidence interval bars
-    ggplot2::geom_point(shape=21, fill="white", size = 3) # estimate points
-  # Add themes and IAU colours ----
-    ylab('') +
-    xlab("Relative risk, log-scaled") +
-    theme_THF()
+ggplot2::ggplot(data = coef_data, aes(y = outcome,
+                                      x = estimate, xmin = ci_low, xmax = ci_high, color = measure)) +
+     ggplot2::geom_vline(xintercept = 1, linetype = "dashed", size = 0.6, colour = "grey75") +  # plot a dashed line at null value (i.e. 1)
+     ggplot2::geom_errorbarh(height = 0.2) + # confidence interval bars
+     ggplot2::geom_point(shape=21, fill="white", size = 3) + # estimate points
+     ylab('') +
+     xlab("Relative risk, log-scaled") +
+     theme_THF()  # Add colours and scales from THFstyles package
 ```
