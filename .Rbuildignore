@@ -6,3 +6,6 @@
 ^THF_styles\.Rcheck$
 ^THF_styles.*\.tar\.gz$
 ^THF_styles.*\.tgz$
+^THFstyle\.Rcheck$
+^THFstyle.*\.tar\.gz$
+^THFstyle.*\.tgz$

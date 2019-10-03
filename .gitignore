@@ -1,0 +1,5 @@
+inst/doc
+.Rproj.user
+THFstyle.Rcheck/
+THFstyle*.tar.gz
+THFstyle*.tgz
