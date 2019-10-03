@@ -47,7 +47,17 @@ THF_colour_order <- c(THF_red,
 pal_THF <- c('#dd0031', '#53a9cd',  '#744284',  '#ffd412',   '#2a7979', '#ee9b90', '#0c402b', '#a6d7d3', '#005078', '#f39214', '#2ca365')
 grDevices::palette(pal_THF)
 
-############# color pieces!
+
+#' THF default colours for fill variable
+#'
+#' @export
+#'
+#' @examples
+#' library(ggplot2)
+#'
+#' ggplot(ToothGrowth, aes(x=factor(dose), y=len, fill=factor(dose))) +
+#' geom_boxplot() + scale_fill_THF() + theme_THF()
+#'
 scale_fill_THF <- function(){
 
   structure(list(
@@ -55,13 +65,8 @@ scale_fill_THF <- function(){
   ))
 }
 
-scale_colour_discrete_THF <- function(){
-
-  structure(list(
-    scale_colour_manual(values=pal_THF)
-  ))
-}
-#' Continuous colour scales THF
+#' THF default colours
+#' Discrete colour scales THF for categorical variables
 #'
 #' @export
 #'
@@ -72,6 +77,13 @@ scale_colour_discrete_THF <- function(){
 #' scale_colour_discrete_THF() +
 #' theme_THF()
 #'
+scale_colour_THF <- function(){
+
+  structure(list(
+    scale_colour_manual(values=pal_THF)
+  ))
+}
+
 scale_colour_continuous_THF <- function(){
 
   structure(list(
