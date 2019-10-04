@@ -14,10 +14,12 @@ knitr::opts_chunk$set(
 )
 ```
 
+This documentation will guide you on how to use the "THF_style" package to create charts with The Health Foundation (THF) branding. THF_style" package standardises the colours, shapes, text and sizes of charts by just adding it together with simple functions from the ggplot2 package. We provide below two examples of types of charts produced by the Improvement Analytics Unit (IAU) as part of their evaluations using THF_theme.   
 
-# Install packages required
+## Install packages required
 
 ```{r setup}
+
 library(THFstyle)
 library(broom)
 library(tidyverse)
@@ -27,10 +29,11 @@ library(boot)
 ```
 
 
-# Example 1: IAU standard coefplot # 
-# -------------------------------- #
+Example 1: IAU standard coefplot
 
-# Create a dataset with coefficient estimates
+The below piece of code creates a forest plot for the coeffiecients of a regression model. Here we assume that we have two types of outcomes (counts and proportions) and we show the confidence intervals for the relative log-scaled risk.
+
+## Create a dataset with coefficient estimates
 
 ```{r}
  
@@ -56,9 +59,10 @@ coef_data <- rbind(model_carb_tidy, model_am_tidy) %>%
 ```
 
 
-# Create a standard IAU coefficient plot using THFtheme
+## Create a standard IAU coefficient plot using THFtheme
 
 ```{r}
+
 ggplot2::ggplot(data = coef_data, aes(y = outcome,
                                   x = estimate, xmin = ci_low, xmax = ci_high, color = factor(measure))) +
      ggplot2::scale_color_discrete(name = "", labels = c("count", "proportion") )+
@@ -68,13 +72,16 @@ ggplot2::ggplot(data = coef_data, aes(y = outcome,
      ylab('') +
      xlab("Relative risk, log-scaled") +
      theme_THF()  # Add colours and scales from THFstyles package
+
 ```
 
 
-# Example 2: IAU standard barchart # 
-# -------------------------------- #
+Example 2: IAU standard barchart 
+ 
+The below piece of code creates a barchart for counts of some binary variables. Here we can assume that binary variables represent comorbity flags and we show the proportions for two groups of populations (intervention and control).
 
-# Create a dataset with binary variables
+
+## Create a dataset with binary variables
 
 ```{r}
  
@@ -107,7 +114,7 @@ var_list <- c("pr", "ne", "ct", "bw")
 ```
 
 
-# Create a standard IAU coefficient plot using THFtheme
+## Create a standard IAU coefficient plot using THFtheme
 
 ```{r}
 
