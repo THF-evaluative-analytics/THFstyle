@@ -22,6 +22,7 @@ library(THFstyle)
 library(broom)
 library(tidyverse)
 library(ggplot2)
+library(boot)
 
 ```
 
@@ -59,11 +60,62 @@ coef_data <- rbind(model_carb_tidy, model_am_tidy) %>%
 
 ```{r}
 ggplot2::ggplot(data = coef_data, aes(y = outcome,
-                                      x = estimate, xmin = ci_low, xmax = ci_high, color = measure)) +
-     ggplot2::geom_vline(xintercept = 1, linetype = "dashed", size = 0.6, colour = "grey75") +  # plot a dashed line at null value (i.e. 1)
-     ggplot2::geom_errorbarh(height = 0.2) + # confidence interval bars
-     ggplot2::geom_point(shape=21, fill="white", size = 3) + # estimate points
+                                  x = estimate, xmin = ci_low, xmax = ci_high, color = factor(measure))) +
+     ggplot2::scale_color_discrete(name = "", labels = c("count", "proportion") )+
+     ggplot2::geom_vline(xintercept = 1, linetype = "dashed", size = 0.6, colour = "grey75") + 
+     ggplot2::geom_errorbarh(height = 0.2) + 
+     ggplot2::geom_point(shape=21, fill="white", size = 3) + 
      ylab('') +
      xlab("Relative risk, log-scaled") +
      theme_THF()  # Add colours and scales from THFstyles package
+```
+
+
+# Example 2: IAU standard barchart # 
+# -------------------------------- #
+
+# Create a dataset with binary variables
+
+```{r}
+ 
+nuclear_dat <- boot::nuclear %>% 
+  select(intervention=pt, pr, ne, ct, bw)
+
+var_list <- c("pr", "ne", "ct", "bw")
+
+ # create proportion of subjects with comorbs in each intervention group ----
+  prop_dat <- nuclear_dat %>%
+    dplyr::select_at(c(var_list, "intervention")) %>%
+    reshape2:::melt.data.frame(id.var=c("intervention")) %>% 
+    mutate(varName = variable)  %>%
+    dplyr::select(-variable) %>%
+    group_by(intervention, varName, value) %>%
+    summarise(count = n()) %>%
+    mutate(prop = count/sum(count), int = (intervention-1)*(-1)) %>% 
+    filter(value == 1) %>%
+    ungroup()
+  
+  # take intervention proportions only to create an ordering variable ----
+  order_dat <- prop_dat %>%
+    filter(intervention == 1) %>%
+    mutate(order = prop) %>%
+    dplyr::select(varName, order)
+  
+  # merge ordering variable onto proportion data ----
+  bar_data <- merge(prop_dat, order_dat, by = "varName")
+
+```
+
+
+# Create a standard IAU coefficient plot using THFtheme
+
+```{r}
+
+ggplot2::ggplot(data = bar_data , aes(x = reorder(varName, -order), y = prop, width = 0.5, fill = factor(int))) + 
+    scale_fill_discrete(name = "", labels = c("intervention", "control")) +
+    geom_bar(position = position_dodge(width=0.6), stat = "identity") +
+    scale_y_continuous(expand = c(0,0),"", breaks = seq(0, 1 , by = 0.1), limits = c(0, 1)) +
+    scale_x_discrete("") +
+    theme_THF()  # Add colours and scales from THFstyles package
+
 ```
