@@ -2,12 +2,14 @@
 % Please edit documentation in R/colours.R
 \name{scale_fill_THF}
 \alias{scale_fill_THF}
-\title{THF default colours for fill variable}
+\title{THF default colours for fill option
+Discrete colour scales THF for categorical variables}
 \usage{
-scale_fill_THF()
+scale_fill_THF(...)
 }
 \description{
-THF default colours for fill variable
+THF default colours for fill option
+Discrete colour scales THF for categorical variables
 }
 \examples{
 library(ggplot2)

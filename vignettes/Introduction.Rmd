@@ -119,7 +119,7 @@ var_list <- c("pr", "ne", "ct", "bw")
 ```{r}
 
 ggplot2::ggplot(data = bar_data , aes(x = reorder(varName, -order), y = prop, width = 0.5, fill = factor(int))) + 
-    scale_fill_discrete(name = "", labels = c("intervention", "control")) +
+    scale_fill_THF(name = "", labels = c("intervention", "control")) +
     geom_bar(position = position_dodge(width=0.6), stat = "identity") +
     scale_y_continuous(expand = c(0,0),"", breaks = seq(0, 1 , by = 0.1), limits = c(0, 1)) +
     scale_x_discrete("") +

@@ -2,20 +2,20 @@
 % Please edit documentation in R/colours.R
 \name{scale_colour_THF}
 \alias{scale_colour_THF}
-\title{THF default colours
+\title{THF default colours for colour option
 Discrete colour scales THF for categorical variables}
 \usage{
-scale_colour_THF()
+scale_colour_THF(...)
 }
 \description{
-THF default colours
+THF default colours for colour option
 Discrete colour scales THF for categorical variables
 }
 \examples{
 library(ggplot2)
 ggplot(mtcars, aes(x=mpg, y=wt, colour=factor(cyl))) +
 geom_point() +
-scale_colour_discrete_THF() +
+scale_colour_THF() +
 theme_THF()
 
 }

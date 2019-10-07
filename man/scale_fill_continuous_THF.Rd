@@ -2,12 +2,14 @@
 % Please edit documentation in R/colours.R
 \name{scale_fill_continuous_THF}
 \alias{scale_fill_continuous_THF}
-\title{Title}
+\title{THF default colours for fill option
+Continuous colour scales THF for continuous variables}
 \usage{
-scale_fill_continuous_THF()
+scale_fill_continuous_THF(...)
 }
 \description{
-Title
+THF default colours for fill option
+Continuous colour scales THF for continuous variables
 }
 \examples{
 

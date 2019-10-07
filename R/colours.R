@@ -48,8 +48,8 @@ pal_THF <- c('#dd0031', '#53a9cd',  '#744284',  '#ffd412',   '#2a7979', '#ee9b90
 grDevices::palette(pal_THF)
 
 
-#' THF default colours for fill variable
-#'
+#' THF default colours for fill option
+#' Discrete colour scales THF for categorical variables
 #' @export
 #'
 #' @examples
@@ -58,14 +58,14 @@ grDevices::palette(pal_THF)
 #' ggplot(ToothGrowth, aes(x=factor(dose), y=len, fill=factor(dose))) +
 #' geom_boxplot() + scale_fill_THF() + theme_THF()
 #'
-scale_fill_THF <- function(){
+scale_fill_THF <- function(...){
 
   structure(list(
     scale_fill_manual(values=pal_THF)
   ))
 }
 
-#' THF default colours
+#' THF default colours for colour option
 #' Discrete colour scales THF for categorical variables
 #'
 #' @export
@@ -74,16 +74,28 @@ scale_fill_THF <- function(){
 #' library(ggplot2)
 #' ggplot(mtcars, aes(x=mpg, y=wt, colour=factor(cyl))) +
 #' geom_point() +
-#' scale_colour_discrete_THF() +
+#' scale_colour_THF() +
 #' theme_THF()
 #'
-scale_colour_THF <- function(){
+scale_colour_THF <- function(...){
 
   structure(list(
     scale_colour_manual(values=pal_THF)
   ))
 }
 
+#' THF default colours for colour option
+#' Continuous colour scales THF for continuous variables
+#'
+#' @export
+#'
+#' @examples
+#'
+#' library(ggplot2)
+#' ggplot(mtcars, aes(x=mpg, y=wt, colour=disp)) +
+#' geom_point() +
+#' scale_colour_continuous_THF() +
+#' theme_THF()
 scale_colour_continuous_THF <- function(){
 
   structure(list(
@@ -92,7 +104,8 @@ scale_colour_continuous_THF <- function(){
 }
 
 
-#' Title
+#' THF default colours for fill option
+#' Continuous colour scales THF for continuous variables
 #'
 #' @export
 #'
@@ -101,7 +114,7 @@ scale_colour_continuous_THF <- function(){
 #'library(ggplot2)
 #'  ggplot(faithfuld, aes(waiting, eruptions)) + geom_raster(aes(fill = density)) +
 #'  scale_fill_continuous_THF() + theme_THF()
-scale_fill_continuous_THF <- function(){
+scale_fill_continuous_THF <- function(...){
 
   structure(list(
     scale_fill_gradientn(colours = pal_THF_cont)
