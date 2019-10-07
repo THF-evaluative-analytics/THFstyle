@@ -10,10 +10,9 @@ If you do not have the `devtools` package installed, you will have to run the fi
 
 ```
 # install.packages('devtools')
-devtools::install_github('bbc/bbplot')
+devtools::install_github('THF-evaluative-analytics/THFstyle')
 ```
 
 
-fdsk
 ## License
 This project is licensed under the [MIT License](LICENSE.md).
