@@ -1,5 +1,5 @@
 # THFstyle
-Functions to make plots look Health Foundation branded.
+Functions to make outputs look Health Foundation branded. We are starting with plots but will eventually add templates for Rmarkdown etc.
 
 ## Installing THFstyle
 
