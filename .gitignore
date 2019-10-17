@@ -31,3 +31,6 @@ Data/
 # markdown; comments and blog
 /RMarkdown
 *.Rmd
+THFstyle.Rcheck/
+THFstyle*.tar.gz
+THFstyle*.tgz
