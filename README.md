@@ -1,6 +1,8 @@
 # THFstyle
 Functions to make outputs look Health Foundation branded. We are starting with plots but will eventually add templates for Rmarkdown etc.
 
+#### Project Status: On-going
+
 ## Installing THFstyle
 
 `THFstyle` is not on CRAN, so you will have to install it directly from Github using `devtools`. 
