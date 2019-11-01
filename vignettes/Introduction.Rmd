@@ -14,14 +14,16 @@ knitr::opts_chunk$set(
 )
 ```
 
-This documentation will guide you on how to use the `THF_style` package to create charts with The Health Foundation (THF) branding. `THF_style` package standardises the colours, shapes, text and sizes of charts by just adding it together with simple functions from the ggplot2 package. We provide below two examples of types of charts produced by the Improvement Analytics Unit (IAU) as part of their evaluations using THF_theme.   
+This documentation will guide you on how to use the `THFstyle` package to create charts with The Health Foundation (THF) branding. `THFstyle` package standardises the colours, shapes, text and sizes of charts by just adding it together with simple functions from the ggplot2 package. We provide below two examples of types of charts produced by the Improvement Analytics Unit (IAU) as part of their evaluations using THF_theme.   
 
 ## Loading packages required
 
 ```{r setup}
 library(THFstyle)
 library(broom)
-library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
 library(boot)
 
 ```
