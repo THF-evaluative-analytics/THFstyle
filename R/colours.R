@@ -96,7 +96,7 @@ scale_colour_THF <- function(...){
 #' geom_point() +
 #' scale_colour_continuous_THF() +
 #' theme_THF()
-scale_colour_continuous_THF <- function(){
+scale_colour_continuous_THF <- function(...){
 
   structure(list(
     scale_colour_gradientn(colours = pal_THF_cont)
