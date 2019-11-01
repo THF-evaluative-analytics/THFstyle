@@ -15,7 +15,10 @@ RoxygenNote: 6.1.1
 Imports: 
     ggplot2,
     ggthemes,
-    grDevices
+    grDevices,
+    boot,
+    dplyr,
+    broom
 Suggests: 
     knitr,
     rmarkdown
