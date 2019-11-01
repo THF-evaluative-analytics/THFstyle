@@ -1,19 +1,18 @@
 
 #' Title
 #'
-#' @param base_size
-#' @param base_family
+#' @param base_size Font size
+#' @param base_family Font
 #'
-#' @return
 #' @export
 #'
 #' @examples
 #'
 #' library(ggplot2)
 #'
-#' ggplot(mtcars, aes(x = mpg)) + geom_dotplot() + THF_styles()
+#' ggplot(mtcars, aes(x = mpg)) + geom_dotplot() + theme_THF()
 theme_THF <- function (base_size = 11,
-                       base_family = "LTUnivers")
+                       base_family = "")
 {
   half_line <- base_size / 2
 
