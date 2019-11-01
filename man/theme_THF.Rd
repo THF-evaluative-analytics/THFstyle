@@ -4,10 +4,12 @@
 \alias{theme_THF}
 \title{Title}
 \usage{
-theme_THF(base_size = 11, base_family = "LTUnivers")
+theme_THF(base_size = 11, base_family = "")
 }
 \arguments{
-\item{base_family}{}
+\item{base_size}{Font size}
+
+\item{base_family}{Font}
 }
 \description{
 Title
@@ -16,5 +18,5 @@ Title
 
 library(ggplot2)
 
-ggplot(mtcars, aes(x = mpg)) + geom_dotplot() + THF_styles()
+ggplot(mtcars, aes(x = mpg)) + geom_dotplot() + theme_THF()
 }
