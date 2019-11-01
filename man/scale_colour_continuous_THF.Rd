@@ -5,7 +5,7 @@
 \title{THF default colours for colour option
 Continuous colour scales THF for continuous variables}
 \usage{
-scale_colour_continuous_THF()
+scale_colour_continuous_THF(...)
 }
 \description{
 THF default colours for colour option
