@@ -53,11 +53,13 @@ theme_THF <- function (base_size = 11,
       ),
       axis.ticks = element_line(colour = THF_light_grey, size = 0.5 * ggplot2:::.pt),
       axis.ticks.length = unit(1, 'mm'),
-      axis.title.x = element_text(margin = margin(
+      axis.title.x = element_text(face='plain',
+        margin = margin(
         t = 0.8 * half_line,
         b = 0.8 * half_line / 2
       )),
       axis.title.y = element_text(
+        face='plain',
         angle = 90,
         margin = margin(r = 0.8 * half_line,
                         l = 0.8 * half_line / 2)
@@ -101,8 +103,9 @@ theme_THF <- function (base_size = 11,
       strip.switch.pad.wrap = unit(0.1, 'cm'),
 
       plot.background = element_rect(colour = 'white'),
-      plot.title = element_text(size = rel(0.8),
-                                margin = margin(b = half_line * 1.2)),
+      plot.title = element_text(size=11, hjust = 0),
+      plot.title.position='plot',
+      plot.subtitle = element_text(size = 8),
       complete = TRUE
     )
 }
