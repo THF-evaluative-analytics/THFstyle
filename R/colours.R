@@ -61,7 +61,7 @@ grDevices::palette(pal_THF)
 scale_fill_THF <- function(...){
 
   structure(list(
-    scale_fill_manual(values=pal_THF)
+    scale_fill_manual(..., values=pal_THF)
   ))
 }
 
@@ -80,7 +80,7 @@ scale_fill_THF <- function(...){
 scale_colour_THF <- function(...){
 
   structure(list(
-    scale_colour_manual(values=pal_THF)
+    scale_colour_manual(..., values=pal_THF)
   ))
 }
 
@@ -99,7 +99,7 @@ scale_colour_THF <- function(...){
 scale_colour_continuous_THF <- function(...){
 
   structure(list(
-    scale_colour_gradientn(colours = pal_THF_cont)
+    scale_colour_gradientn(..., colours = pal_THF_cont)
   ))
 }
 
@@ -117,7 +117,7 @@ scale_colour_continuous_THF <- function(...){
 scale_fill_continuous_THF <- function(...){
 
   structure(list(
-    scale_fill_gradientn(colours = pal_THF_cont)
+    scale_fill_gradientn(..., colours = pal_THF_cont)
   ))
 }
 
