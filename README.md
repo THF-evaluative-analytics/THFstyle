@@ -1,8 +1,10 @@
+
+
 # THFstyle
 Functions to make outputs look Health Foundation branded. We are starting with plots but will eventually add templates for Rmarkdown etc.
 
 #### Project Status: On-going
-
+  [![R build status](https://github.com/THF-evaluative-analytics/THFstyle/workflows/R-CMD-check/badge.svg)](https://github.com/THF-evaluative-analytics/THFstyle/actions)
 ## Installing THFstyle
 
 `THFstyle` is not on CRAN, so you will have to install it directly from Github using `devtools`. 
